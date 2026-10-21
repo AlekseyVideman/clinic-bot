@@ -1,0 +1,136 @@
+appointment_creation.prompt.date: |
+  📆 Выберите дату
+
+  **Свободные даты на 14 дней вперёд:**
+appointment_creation.prompt.goal: |
+  🎯 Введите цель обычным сообщением
+  (или выберите из списка)
+appointment_creation.prompt.message_choose: |
+  💬 Какое сообщение увидит пациент?
+  Напишите своё в сообщении, если надо поменять.
+appointment_creation.prompt.phone_number: |
+  📞 Введите номер телефона
+appointment_creation.prompt.start_end_time: |
+  ⏰ Введите время
+  Например:
+  - **10:40 11:00**
+  - **13:00 14:00**
+
+  **Свободное время на выбранную дату:**
+  %s
+
+# Confirmations
+confirmation.admin.appointment_creation: |
+  ❗ Проверьте данные и выберите действие:
+  
+  %s
+confirmation.cancel_appointment: ❓ Вы действительно хотите отменить запись?
+
+# Buttons
+button.admin.appointment_creation.cancel: Отмена
+button.admin.appointment_creation.save: Сохранить
+button.help.admin: Справочник администратора
+button.patient.cancel_appointment: Отменить запись
+button.help.patient: Справочник пациента
+button.register: Зарегистрироваться
+button.admin.appointment_creation.message_template: Оставить шаблонное
+button.skip_goal_input: ⏭️ Пропустить
+
+# Bot commands descriptions
+command.cancel_appointment.desc: Отменить запись (если не можете подойти)
+command.cancel_appointment_creation.desc: Отменить создание записи (если есть ошибка в данных)
+command.create_appointment.desc: Записать пациента на приём
+command.list_next_appointments.desc: Узнать следующие записи
+
+# Error messages
+error.admin.appointment_creation.date: |
+  Неверная дата!
+  Пример: **31.12**
+error.admin.appointment_creation.invalid_appointment: |
+  ⛔ Ошибка проверки данных
+  %s
+error.admin.appointment_creation.phone: |
+  Неверный формат номера телефона!
+  Пример: **79161234567**
+error.admin.appointment_creation.session_already_exist: |
+  ⛔ Для начала закончите редактирование предыдущей записи!
+error.admin.appointment_creation.start_end_time: |
+  Неверный формат времени!
+  Пример:
+  - **10:00 10:30**
+  - **13:00 14:00**
+error.patient.already_registered: ⛔ Вы уже зарегистрированы!
+error.technical: |
+  🔥 Техническая ошибка! Свяжитесь с тех. админом.
+  ID: `%s`
+error.unknown_input: ❓ Не понял вас
+
+# Notifications
+notification.admin.appointment_cancelled_by_patient: ❗ Пациент с номером **%s** отменил запись
+notification.admin.appointment_created: ✅ Запись добавлена, пациент уведомлён
+notification.admin.creation_cancelled: ❗ Создание записи отменено
+notification.admin.patient_registered: |
+  ➕ Зарегистрирован новый пациент: `%s`
+  Нажмите на номер, чтобы скопировать его.
+notification.footer: |
+  ───────────────────────
+  🎯 Цель: **%s**
+  📅 Дата: **%s**
+  ⌛ Время: **%s—%s**
+  ───────────────────────
+  Если не сможете подойти, отмените запись ниже:
+notification.patient.appointment_cancelled: ✅ Запись отменена
+notification.patient.appointment_created: |
+  ✅ Вы назначены на прием к стоматологу. Я уведомлю вас за день до приёма
+  %s
+notification.template: "%s, здравствуйте! Напоминаю вам о приеме к стоматологу."
+
+# Help
+help.admin: |
+  # Введение
+
+  **Определения**
+  Пациент — тот, кто получает уведомления.
+  Администратор — работник клиники.
+
+
+  # Рабочий процесс
+
+  **Добавление записи**
+  1. Спросите пациента, зарегистрирован ли он в боте. Если нет, попросите перейти в бота и далее зарегистрироваться.
+  1. Выполните команду `/%s`, чтобы запустить процесс добавления записи.
+  1. Введите требуемые данные.
+  1. Бот проверит данные и добавит запись.
+
+  **Просмотр следующих записей**
+  1. Выполните команду `/%s`.
+  1. Бот выведет список следующих записей на 14 дней вперёд.
+
+  **Автоматическое удаление записи**
+  Бот удаляет неактуальные записи на следующий день после последнего уведомления.
+help.patient: |
+  # Как получать уведомления?
+  1. Зарегистрируйтесь, если не сделали этого ранее.
+  2. Не закрывайте эту переписку.
+
+  # Я не смогу прийти. Что делать?
+  1. Отмените запись, выполнив команду `/%s`.
+
+# Miscellaneous
+appointment.goal_not_specified: (не указано)
+appointment.view: |
+  Дата: **%s**
+  Время: **%s—%s**
+  Телефон: **%s**
+  Имя: **%s**
+  Цель приёма: **%s**
+  Сообщение:
+  > %s
+patient.greeting: |
+  👋 Здравствуйте! Я напомню вам о приёме в клинику.
+  Зарегистрируйтесь перед началом использования:
+patient.registration_completed: |
+  🎉 Регистрация завершена!
+
+  Теперь я смогу напомнить вам о приёме в клинику. Пожалуйста, не закрывайте этот диалог.
+author.info: "Меня сделал [Алексей Видеман](https://max.ru/u/f9LHodD0cOLLpLYbU0fBF3YxLk4yQyWgfEsoookL6kFKyQrt9_2vpxz4NWo)"

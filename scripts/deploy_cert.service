@@ -1,0 +1,29 @@
+[Unit]
+Description=Renew and package SSL certificate for webhook
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+# ВАЖНО: Путь к вашему скрипту
+ExecStart=/usr/bin/bash /root/bot/deploy_cert.sh 
+
+# Передаем переменные.
+Environment="DOMAIN=your-bot-domain.com"
+Environment="PKCS12_PASS=java"
+
+# Запуск от root обязателен для --standalone (порты 80/443)
+User=root
+Group=root
+
+# Защита: не перезапускать при ошибке, чтобы не заблокировать порты
+Restart=no
+
+# Таймаут на случай зависания acme.sh
+TimeoutStartSec=300
+
+# Разрешаем службе видеть /root (по умолчанию PrivateTmp и ProtectHome могут блокировать доступ)
+ProtectHome=false
+
+# разрешаем запись
+ReadWritePaths=/root/bot
