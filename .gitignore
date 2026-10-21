@@ -6,6 +6,7 @@ build/
 .kotlin
 **/logs
 **/database.db
+**/app.properties
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
